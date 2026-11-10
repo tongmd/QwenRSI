@@ -3,10 +3,13 @@ on: [push, pull_request]
 jobs:
   cpu:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.11']
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - run: uv venv --python 3.11
+      - run: uv venv --python ${{ matrix.python }}
       - run: uv pip install -e '.[dev]' 'ziglang>=0.14,<0.15'
       - run: uv run --no-project ruff check src tests
       - run: uv run --no-project pytest -q

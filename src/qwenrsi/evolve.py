@@ -57,7 +57,7 @@ def run(
     start = time.time()
     run_manifest = {
         "schema_version": 1,
-        "created_utc": datetime.datetime.now(datetime.UTC).isoformat(),
+        "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "iterations": iterations,
         "dev_seed": dev_seed,
         "validation_seed": validation_seed,
