@@ -26,6 +26,7 @@ printf 'evolving\n' > "$OUT/STATUS"
     --iterations 3 --out "$OUT/evolution"
 SELECTED=$(cat "$OUT/evolution/SELECTED")
 CONTROLLER="$OUT/evolution/$SELECTED"
+"$QWENRSI_PYTHON" -m qwenrsi.cli replay "$OUT/evolution"
 printf 'auditing-circuit\n' > "$OUT/STATUS"
 "$QWENRSI_PYTHON" -m qwenrsi.cli audit-circuit "$CONTROLLER" \
     --samples 32 --out "$OUT/circuit-audit.json"

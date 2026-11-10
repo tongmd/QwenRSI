@@ -34,7 +34,9 @@ def conformance(directory, samples=32):
 def improves(candidate, parent):
     """Immutable admission rule; separate from the editable nomination procedure."""
     return candidate["solved"] > parent["solved"] or (
-        candidate["solved"] == parent["solved"] and candidate["total_steps"] < parent["total_steps"]
+        candidate["solved"] == parent["solved"]
+        and candidate["solved"] > 0
+        and candidate["total_steps"] < parent["total_steps"]
     )
 
 

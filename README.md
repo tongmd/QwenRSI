@@ -60,6 +60,10 @@ are never silently reused. The final test split is evaluated after selection and
 never enters the proposal context. Repeated validation feedback still permits
 validation overfitting; the final test remains a separate check.
 
+`qwenrsi replay runs/experiment-001` independently recomputes all recorded scores
+with the RV32 reference and verifies that executable source matches the actual
+model responses. This is deterministic replay, not an external research review.
+
 The included **repair-protocol simulator** supplies transient failures and a
 second repair after failed verification. Its scores measure protocol correctness,
 not general software-engineering ability. The seed controller deliberately omits

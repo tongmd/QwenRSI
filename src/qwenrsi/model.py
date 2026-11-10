@@ -61,6 +61,14 @@ class LocalQwen:
             "device": device,
             "weights_frozen": True,
         }
+        root = Path(model)
+        self.identity["local_file_hashes"] = {
+            name: hashlib.sha256((root / name).read_bytes()).hexdigest()
+            for name in ["config.json", "model.safetensors.index.json"]
+            if (root / name).is_file()
+        }
+        if (root / "REVISION").is_file():
+            self.identity["download_revision"] = (root / "REVISION").read_text().strip()
 
     def generate(self, messages, record_path):
         import torch

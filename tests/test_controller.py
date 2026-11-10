@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import pytest
 
@@ -48,6 +49,7 @@ def test_abi_rejects_invalid_input(state):
 
 
 def test_acceptance_is_external():
+    assert not improves({"solved": 0, "total_steps": 1}, {"solved": 0, "total_steps": 100})
     assert improves({"solved": 10, "total_steps": 80}, {"solved": 9, "total_steps": 20})
     assert not improves({"solved": 9, "total_steps": 20}, {"solved": 10, "total_steps": 80})
     assert not improves({"solved": 10, "total_steps": 80}, {"solved": 10, "total_steps": 80})
@@ -66,8 +68,9 @@ def test_full_evolution_accepts_improvement_and_keeps_holdout_private(tmp_path):
         def propose(self, source, development, history, record_path):
             assert development["seed"] == 1103
             assert "selected_test" not in str(history)
-            Path(record_path).write_text('{"test_fixture":true}')
-            return {"source": (ROOT / "examples" / "verified.c").read_text()}
+            proposal = {"source": (ROOT / "examples" / "verified.c").read_text()}
+            Path(record_path).write_text(json.dumps({"test_fixture": True, "response": json.dumps(proposal)}))
+            return proposal
 
     report = run(
         source=ROOT / "examples" / "baseline.c",
@@ -82,6 +85,12 @@ def test_full_evolution_accepts_improvement_and_keeps_holdout_private(tmp_path):
     assert report["baseline"]["solved"] == 0
     assert report["selected_test"]["solved"] == 12
     assert (tmp_path / "run" / "v002" / "decision.json").exists()
+    from qwenrsi.replay import replay
+
+    assert replay(tmp_path / "run")["status"] == "passed"
+    (tmp_path / "run" / "v001" / "source.c").write_text("tampered")
+    with pytest.raises(ValueError, match="hash mismatch"):
+        replay(tmp_path / "run")
 
 
 def test_malformed_proposal_preserves_current_version(tmp_path):

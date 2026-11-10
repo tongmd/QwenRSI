@@ -9,3 +9,7 @@ runs/
 artifacts/
 *.egg-info/
 .env
+models/
+.venv-run/
+CODE_REVISION
+*.log

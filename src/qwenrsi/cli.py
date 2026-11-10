@@ -20,6 +20,8 @@ def main():
     p.add_argument("--out", required=True, type=Path)
     p = sub.add_parser("check", help="Differential native/RV32 conformance")
     p.add_argument("directory", type=Path)
+    p = sub.add_parser("replay", help="Recompute a finished search and verify proposal provenance")
+    p.add_argument("directory", type=Path)
     p = sub.add_parser("eval", help="Evaluate the synthetic protocol simulator")
     p.add_argument("directory", type=Path)
     p.add_argument("--backend", choices=["native", "reference", "cuda"], default="reference")
@@ -67,6 +69,10 @@ def main():
             from qwenrsi.evolve import conformance
 
             result = conformance(args.directory)
+        elif args.command == "replay":
+            from qwenrsi.replay import replay
+
+            result = replay(args.directory)
         elif args.command == "eval":
             from qwenrsi.benchmark import evaluate, summary
             from qwenrsi.compiler import NativeController, ReferenceController
