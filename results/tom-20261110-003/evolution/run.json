@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-10T14:55:28.350314+00:00",
+  "iterations": 3,
+  "dev_seed": 1103,
+  "validation_seed": 2207,
+  "test_seed": 3301,
+  "count": 64,
+  "test_count": 256,
+  "evaluation_type": "simulation_only",
+  "model": {
+    "model": "models/Qwen3.5-4B",
+    "config_commit": null,
+    "class": "Qwen3_5ForConditionalGeneration",
+    "device": "cuda:0",
+    "weights_frozen": true,
+    "local_file_hashes": {
+      "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "model.safetensors.index.json": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "download_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "upstream": "divagr18/qwenputer@0cab57038a8b218dabe481f994174c3437405e3d",
+  "code_revision": "5b4afdfbc543b737cacd79d57707a8a286b1d65e",
+  "source_hashes": {
+    "__init__.py": "dc1cadd50c474dce733a5c5a734d301dc7e425ab5eaf8a4a5eadb3633391671f",
+    "benchmark.py": "7717258e1dbf843be8d19b91598fe3cd2b88161d5652bf8eb44c7d4f8d170b14",
+    "circuit.py": "6163b7b26db964632119b303c99b0306641fb1d45e394f7769712f840b756f82",
+    "cli.py": "643d82dac0d3ce19b75ff989a53f630e95447bf4a63c2d4cd254210b5cf03ae5",
+    "coding.py": "2e8bb4d63834a0a0f83a50435d8959bfb1b64abe510f13e44e7a8e19ea1421ec",
+    "compiler.py": "1d27aab213febd98cc268430bd04886adbe910cf7d8460eab4849eea0157e796",
+    "evolve.py": "eaca820b8721b81b9dd69563880ed631b282d00dd808f97f209221c3c4cd0cb0",
+    "model.py": "550b3b62f03429a3fd7250e0d6bb5462fd98bc0444e804973443e994451375dc",
+    "replay.py": "8bcccb064d06377b1b32dd63d16bb40acd7095b6ba11b2ed6d0c499a69d96c6e"
+  }
+}

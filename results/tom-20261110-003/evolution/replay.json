@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "backend": "rv32-reference",
+  "checks": [
+    {
+      "version": "v000",
+      "split": "development",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 1103,
+      "count": 64,
+      "solved": 0,
+      "success_rate": 0.0,
+      "total_steps": 292
+    },
+    {
+      "version": "v000",
+      "split": "validation",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 2207,
+      "count": 64,
+      "solved": 0,
+      "success_rate": 0.0,
+      "total_steps": 290
+    },
+    {
+      "version": "v001",
+      "split": "development",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 1103,
+      "count": 64,
+      "solved": 53,
+      "success_rate": 0.828125,
+      "total_steps": 428
+    },
+    {
+      "version": "v001",
+      "split": "validation",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 2207,
+      "count": 64,
+      "solved": 54,
+      "success_rate": 0.84375,
+      "total_steps": 410
+    },
+    {
+      "version": "v002",
+      "split": "development",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 1103,
+      "count": 64,
+      "solved": 53,
+      "success_rate": 0.828125,
+      "total_steps": 428
+    },
+    {
+      "version": "v002",
+      "split": "validation",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 2207,
+      "count": 64,
+      "solved": 54,
+      "success_rate": 0.84375,
+      "total_steps": 410
+    },
+    {
+      "version": "v003",
+      "split": "development",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 1103,
+      "count": 64,
+      "solved": 53,
+      "success_rate": 0.828125,
+      "total_steps": 428
+    },
+    {
+      "version": "v003",
+      "split": "validation",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 2207,
+      "count": 64,
+      "solved": 54,
+      "success_rate": 0.84375,
+      "total_steps": 410
+    },
+    {
+      "version": "v000",
+      "split": "baseline_test",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 3301,
+      "count": 256,
+      "solved": 0,
+      "success_rate": 0.0,
+      "total_steps": 1183
+    },
+    {
+      "version": "v001",
+      "split": "selected_test",
+      "evaluation_type": "simulation_only",
+      "suite": "repair-protocol-v1",
+      "seed": 3301,
+      "count": 256,
+      "solved": 216,
+      "success_rate": 0.84375,
+      "total_steps": 1685
+    }
+  ],
+  "model_proposals_match_executable_source": true,
+  "scope": "Direct deterministic replay; not an independent external review"
+}

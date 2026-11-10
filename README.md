@@ -2,6 +2,10 @@
 
 **Editable agent controllers, executed as Qwenputer circuits.**
 
+[Controller model](https://huggingface.co/StoneZhang/QwenRSI-Controller-v0.1) ·
+[Measured run](results/README.md) ·
+[Releases](https://github.com/tongmd/QwenRSI/releases)
+
 QwenRSI connects a frozen Qwen model to a versioned C harness. Qwen proposes edits
 to its task policy and candidate-selection policy. The system compiles each
 proposal to native code and RV32 firmware, checks both executions agree, measures
@@ -11,6 +15,14 @@ Qwenputer's compiled Gated DeltaNet/SwiGLU circuit on a GPU.
 This is an experimental implementation of a bounded self-modification loop.
 It does not train Qwen, demonstrate unbounded recursive improvement, or claim
 that an internal harness is faster than native code.
+
+The first measured run on an RTX 4090 accepted one of three actual Qwen proposals.
+On the synthetic protocol's final 256 cases, the seed solved 0, the selected
+controller solved 216, and the human-written verified controller solved 256.
+Both seed and selected controllers solved all four real Python pilot tasks.
+The selected circuit matched its reference on 1,220 freely generated trace
+tokens. These are integration results, not evidence of broad coding gains or
+improvement beyond the human-written controller. [Raw evidence](results/README.md).
 
 ```mermaid
 flowchart LR

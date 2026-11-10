@@ -29,6 +29,7 @@ def main():
             raise RuntimeError(f"Artifact hash mismatch: {name}")
     code = json.loads((root / "coding-selected/report.json").read_text())
     baseline_code = json.loads((root / "coding-baseline/report.json").read_text())
+    human = json.loads((root / "human-comparison/results.json").read_text())
     target = root / "model"
     ev = target / "evidence"
     ev.mkdir(exist_ok=True)
@@ -89,6 +90,7 @@ selected source provenance are preserved. {report["accepted"]} of
 |---|---|
 | Synthetic repair protocol, seed controller | {base["solved"]}/{base["count"]} |
 | Synthetic repair protocol, selected controller | {final["solved"]}/{final["count"]} |
+| Synthetic repair protocol, human-written verified controller | {human["solved"]}/{human["count"]} |
 | Real Python repair pilot, seed controller | {baseline_code["solved"]}/{baseline_code["count"]} |
 | Real Python repair pilot, selected controller | {code["solved"]}/{code["count"]} |
 | Exported tensor reload audit | {audit["free_running_tokens"]} free-running trace tokens, 0 mismatches |

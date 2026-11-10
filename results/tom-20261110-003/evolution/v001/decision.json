@@ -1,0 +1,28 @@
+{
+  "iteration": 1,
+  "parent": "v000",
+  "candidate": "v001",
+  "accepted": true,
+  "explanation": "The original controller fails because it skips the 'test' action (index 2) entirely. The trace shows that after patching, the state jumps directly to 'finish' (index 3), but the 'verified' flag (s[2]) remains 0. The success protocol requires a passing test to set the verified flag. The new policy enforces the sequence: inspect -> patch -> test -> finish. It also adds a safety check to abort if patch attempts exceed a limit or if the system is already verified. The select_candidate function is improved to use a more robust heuristic: it nominates a candidate if the candidate has solved more tasks than the parent, or if the candidate has solved the same number of tasks but used fewer steps (efficiency), ensuring we only switch to a candidate when they are demonstrably better or equal in performance.",
+  "nominated": true,
+  "development": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 1103,
+    "count": 64,
+    "solved": 53,
+    "success_rate": 0.828125,
+    "total_steps": 428
+  },
+  "validation": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 2207,
+    "count": 64,
+    "solved": 54,
+    "success_rate": 0.84375,
+    "total_steps": 410
+  },
+  "source_sha256": "08eb434c88402cfb54c1518fef4c61aa3c654ceec1d5785d914ab6554c81f8fb",
+  "meta_changed": true
+}

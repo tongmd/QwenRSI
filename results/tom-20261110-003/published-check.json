@@ -1,0 +1,61 @@
+{
+  "repo": "StoneZhang/QwenRSI-Controller-v0.1",
+  "revision": "33bbe2e5c072db48f5cf63ca00a052face430f9a",
+  "downloaded_and_executed": true,
+  "mismatches": 0,
+  "records": [
+    {
+      "state": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      "mode": 0,
+      "circuit": 0,
+      "reference": 0
+    },
+    {
+      "state": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        8,
+        4
+      ],
+      "mode": 0,
+      "circuit": 2,
+      "reference": 2
+    },
+    {
+      "state": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        8,
+        4
+      ],
+      "mode": 0,
+      "circuit": 3,
+      "reference": 3
+    },
+    {
+      "state": [
+        0,
+        64,
+        100,
+        300
+      ],
+      "mode": 1,
+      "circuit": 1,
+      "reference": 1
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "evaluation_type": "simulation_only",
+  "selected": "v001",
+  "accepted": 1,
+  "iterations": 3,
+  "baseline": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 3301,
+    "count": 256,
+    "solved": 0,
+    "success_rate": 0.0,
+    "total_steps": 1183
+  },
+  "selected_test": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 3301,
+    "count": 256,
+    "solved": 216,
+    "success_rate": 0.84375,
+    "total_steps": 1685
+  },
+  "meta_edits_accepted": 1,
+  "elapsed_seconds": 79.13532876968384,
+  "limitations": [
+    "Synthetic repair protocol; not a coding benchmark",
+    "No gradient training or base-model weight updates",
+    "Compiler, benchmark and model scheduling execute on host",
+    "Sampled conformance is testing, not a proof for all int32 inputs"
+  ]
+}

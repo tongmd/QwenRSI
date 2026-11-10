@@ -1,0 +1,28 @@
+{
+  "iteration": 2,
+  "parent": "v001",
+  "candidate": "v002",
+  "accepted": false,
+  "explanation": "The previous controller failed because it assumed that if `s[1]` (patched) was true, the verification step (`s[2]`) was implicitly handled or unnecessary, leading to premature termination without a passing test. The new `policy` function strictly enforces the sequence: Inspect -> Patch -> Test -> Finish. It explicitly checks if the system is already verified (`s[2] == 1`) to allow finishing, but requires a test action if `s[2] == 0` after patching. It also adds a safety check to abort if the last error is non-zero or if patch attempts exceed the limit. The `select_candidate` function is refined to handle the case where the candidate has solved fewer tasks but is significantly more efficient (fewer steps), preventing the controller from blindly switching to a worse-performing candidate just because it solved the same number of tasks with slightly fewer steps, unless the step difference is substantial relative to the task count.",
+  "nominated": false,
+  "development": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 1103,
+    "count": 64,
+    "solved": 53,
+    "success_rate": 0.828125,
+    "total_steps": 428
+  },
+  "validation": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 2207,
+    "count": 64,
+    "solved": 54,
+    "success_rate": 0.84375,
+    "total_steps": 410
+  },
+  "source_sha256": "54cb6bbca2a875eee8361c6d83431ac44dfbcd25063755fc8f4ffce9ec811cfa",
+  "meta_changed": true
+}

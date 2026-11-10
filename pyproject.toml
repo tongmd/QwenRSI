@@ -6,6 +6,8 @@ build-backend = "hatchling.build"
 name = "qwenrsi"
 version = "0.1.0"
 description = "Editable agent controllers, compiled into Qwenputer circuits, with measured self-improvement"
+readme = "README.md"
+authors = [{name = "Tong Zhang"}]
 requires-python = ">=3.10"
 license = "MIT"
 dependencies = ["numpy>=1.26", "safetensors>=0.4"]
@@ -16,6 +18,11 @@ dev = ["pytest>=8", "ruff>=0.6", "build"]
 
 [project.scripts]
 qwenrsi = "qwenrsi.cli:main"
+
+[project.urls]
+Source = "https://github.com/tongmd/QwenRSI"
+Model = "https://huggingface.co/StoneZhang/QwenRSI-Controller-v0.1"
+Issues = "https://github.com/tongmd/QwenRSI/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/qwenrsi"]

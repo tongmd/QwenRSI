@@ -1,0 +1,2 @@
+# Preserve exact model-generated evidence bytes, including whitespace, for hash/replay checks.
+results/** -text -whitespace

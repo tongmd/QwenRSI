@@ -1,0 +1,203 @@
+{
+  "evaluation_type": "real_gt",
+  "suite": "python-repair-pilot-v1",
+  "scope": "Small authored repair tasks; not SWE-bench or a general coding benchmark",
+  "count": 4,
+  "solved": 4,
+  "model_calls": 4,
+  "elapsed_seconds": 16.507081270217896,
+  "records": [
+    {
+      "task_id": "slugify",
+      "finished": true,
+      "success": true,
+      "oracle_passed": true,
+      "verified_before_finish": false,
+      "model_calls": 1,
+      "steps": 3,
+      "trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 3
+        }
+      ],
+      "oracle_error": ""
+    },
+    {
+      "task_id": "chunks",
+      "finished": true,
+      "success": true,
+      "oracle_passed": true,
+      "verified_before_finish": false,
+      "model_calls": 1,
+      "steps": 3,
+      "trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 3
+        }
+      ],
+      "oracle_error": ""
+    },
+    {
+      "task_id": "median",
+      "finished": true,
+      "success": true,
+      "oracle_passed": true,
+      "verified_before_finish": false,
+      "model_calls": 1,
+      "steps": 3,
+      "trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 3
+        }
+      ],
+      "oracle_error": ""
+    },
+    {
+      "task_id": "parse_bool",
+      "finished": true,
+      "success": true,
+      "oracle_passed": true,
+      "verified_before_finish": false,
+      "model_calls": 1,
+      "steps": 3,
+      "trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 3
+        }
+      ],
+      "oracle_error": ""
+    }
+  ]
+}

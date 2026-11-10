@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_sha256": "9f00a166bf29f9b933132863f2a4832943e0a96936eb6d61012216fdbb954474",
+  "elf_sha256": "382f81a8ac7a37d6c2cee626bcbc41028d626203b3d24e1ade35b25efa3d0586",
+  "abi": "qwenrsi-controller-v1",
+  "input_address": 256,
+  "isa": "rv32im",
+  "compiler": [
+    "/datadisk1/zt/qwenrsi/.venv-run/bin/python",
+    "-m",
+    "ziglang"
+  ],
+  "source": "source.c",
+  "firmware": "controller.elf"
+}

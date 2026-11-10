@@ -1,0 +1,28 @@
+{
+  "iteration": 3,
+  "parent": "v001",
+  "candidate": "v003",
+  "accepted": false,
+  "explanation": "The previous controller failed because it did not handle the transient failure of the patch action correctly. When a patch fails (error != 0), the state remains 'patched' (s[1]=1) but the system is not actually fixed. The old logic would then immediately try to 'test' (action 2), which would fail (error 4), and then the controller would abort. The improved controller adds a specific check: if the patch action results in an error, it should immediately retry patching (action 1) rather than moving to testing. This allows the controller to recover from transient patch failures without wasting steps on a failing test. The select_candidate logic remains robust, prioritizing candidates that solve more tasks or solve the same number of tasks with fewer steps.",
+  "nominated": false,
+  "development": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 1103,
+    "count": 64,
+    "solved": 53,
+    "success_rate": 0.828125,
+    "total_steps": 428
+  },
+  "validation": {
+    "evaluation_type": "simulation_only",
+    "suite": "repair-protocol-v1",
+    "seed": 2207,
+    "count": 64,
+    "solved": 54,
+    "success_rate": 0.84375,
+    "total_steps": 410
+  },
+  "source_sha256": "8c7ae6e3bf0ce6a5d1681a8670159659e711f5f2452058d01cf654c585f2e202",
+  "meta_changed": true
+}

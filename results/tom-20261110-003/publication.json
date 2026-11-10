@@ -1,0 +1,11 @@
+{
+  "repo_id": "StoneZhang/QwenRSI-Controller-v0.1",
+  "url": "https://huggingface.co/StoneZhang/QwenRSI-Controller-v0.1",
+  "commit": "33bbe2e5c072db48f5cf63ca00a052face430f9a",
+  "run": "tom-20261110-003",
+  "files": {
+    "controller.safetensors": "b3556ddb679a6ca87e7ea5eb3d45a9fd1bbe96cb2d7c57b3dd7d8f433dc5bf47",
+    "controller.elf": "39e804bd9a82767b514d6f5f0579e7a3961070d233ea0adb38725407818d5c22",
+    "source.c": "08eb434c88402cfb54c1518fef4c61aa3c654ceec1d5785d914ab6554c81f8fb"
+  }
+}

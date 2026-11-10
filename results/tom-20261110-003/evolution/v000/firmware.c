@@ -1,0 +1,33 @@
+/* State: inspected, patched, verified, last_error, patch_attempts,
+   steps_left, steps_used, reserved[8], mode.
+   Actions: 0 inspect, 1 patch, 2 test, 3 finish, 4 abort.
+   This deliberately incomplete seed skips verification. */
+int policy(const int *s) {
+    if (!s[0]) return 0;
+    if (!s[1]) return 1;
+    return 3;
+}
+
+/* Meta state: parent solved, candidate solved, parent steps, candidate steps.
+   The external validation gate is independent of this editable selector. */
+int select_candidate(const int *s) {
+    return s[1] > s[0];
+}
+
+
+volatile int input_state[16] __attribute__((section(".input"))) = {0};
+static void emit(int x) {
+    register int a0 __asm__("a0") = x;
+    register int a7 __asm__("a7") = 1;
+    __asm__ volatile("ecall" : : "r"(a0), "r"(a7) : "memory");
+}
+void _start(void) __attribute__((section(".text.init"), noreturn));
+void _start(void) {
+    int s[16]; for (int i=0; i<16; ++i) s[i]=input_state[i];
+    int result = s[15] ? select_candidate(s) : policy(s);
+    emit(result);
+    register int a0 __asm__("a0") = 0;
+    register int a7 __asm__("a7") = 93;
+    __asm__ volatile("ecall" : : "r"(a0), "r"(a7) : "memory");
+    for (;;) {}
+}

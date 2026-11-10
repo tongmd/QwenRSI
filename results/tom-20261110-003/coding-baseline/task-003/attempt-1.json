@@ -1,0 +1,29 @@
+{
+  "identity": {
+    "model": "models/Qwen3.5-4B",
+    "config_commit": null,
+    "class": "Qwen3_5ForConditionalGeneration",
+    "device": "cuda:0",
+    "weights_frozen": true,
+    "local_file_hashes": {
+      "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "model.safetensors.index.json": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "download_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Repair the Python module. Return the complete module in one Python code block, no commentary. Preserve the public function API."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": \"Fix parse_bool(value): accept strings true/yes/1 and false/no/0, ignoring surrounding whitespace and letter case. Return a boolean. Raise ValueError for any other string.\", \"source\": \"def parse_bool(value):\\n    return bool(value)\\n\", \"visible_tests\": \"assert parse_bool('true') is True\\nassert parse_bool('false') is False\\n\", \"feedback\": \"\"}"
+    }
+  ],
+  "response": "```python\ndef parse_bool(value):\n    if isinstance(value, bool):\n        return value\n    if isinstance(value, int):\n        return bool(value)\n    if isinstance(value, str):\n        normalized = value.strip().lower()\n        if normalized in ('true', 'yes', '1'):\n            return True\n        if normalized in ('false', 'no', '0'):\n            return False\n        raise ValueError(f\"Invalid boolean string: {value}\")\n    raise TypeError(f\"Expected string or int, got {type(value).__name__}\")\n```\n",
+  "prompt_sha256": "51b7ab2870e0233e6cfa8defa16726f3867cfdd134b9dd5525321150c3083b85",
+  "input_tokens": 127,
+  "output_tokens": 124,
+  "elapsed_seconds": 5.81648325920105
+}
