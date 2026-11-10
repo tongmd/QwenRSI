@@ -1,0 +1,30 @@
+[
+  {
+    "id": "slugify",
+    "description": "Fix slugify(text): lowercase ASCII letters and digits, replace each run of other characters with one hyphen, and strip leading/trailing hyphens.",
+    "initial_source": "def slugify(text):\n    return text.lower().replace(' ', '-')\n",
+    "visible_tests": "assert slugify('Hello World') == 'hello-world'\nassert slugify(' a   b! ') == 'a-b'\n",
+    "oracle_tests": "assert slugify('') == ''\nassert slugify('---A...B___C---') == 'a-b-c'\nassert slugify(' 123 ') == '123'\nassert slugify('!@#') == ''\n"
+  },
+  {
+    "id": "chunks",
+    "description": "Fix chunks(values, size): return a list of consecutive nonempty list chunks, preserving order and including the last partial chunk. Raise ValueError when size <= 0. Empty input returns [].",
+    "initial_source": "def chunks(values, size):\n    return [values[i:i+size] for i in range(0, len(values)-size+1, size)]\n",
+    "visible_tests": "assert chunks([1,2,3], 2) == [[1,2],[3]]\nassert chunks([], 2) == []\n",
+    "oracle_tests": "assert chunks([1], 5) == [[1]]\nassert chunks(list(range(5)), 1) == [[0],[1],[2],[3],[4]]\nfor n in [0,-1]:\n    try:\n        chunks([1,2], n)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError('expected ValueError')\n"
+  },
+  {
+    "id": "median",
+    "description": "Fix median(values): return the median of a nonempty numeric list, using the mean of the two middle values for even length. Do not mutate the input. Raise ValueError for an empty list.",
+    "initial_source": "def median(values):\n    values.sort()\n    return values[len(values)//2]\n",
+    "visible_tests": "assert median([3,1,2]) == 2\nassert median([1,3]) == 2\n",
+    "oracle_tests": "v=[9,1,5,3]\nassert median(v) == 4\nassert v == [9,1,5,3]\nassert median([-5]) == -5\ntry:\n    median([])\nexcept ValueError:\n    pass\nelse:\n    raise AssertionError('expected ValueError')\n"
+  },
+  {
+    "id": "parse_bool",
+    "description": "Fix parse_bool(value): accept strings true/yes/1 and false/no/0, ignoring surrounding whitespace and letter case. Return a boolean. Raise ValueError for any other string.",
+    "initial_source": "def parse_bool(value):\n    return bool(value)\n",
+    "visible_tests": "assert parse_bool('true') is True\nassert parse_bool('false') is False\n",
+    "oracle_tests": "for s in [' YES ', '1', 'True']:\n    assert parse_bool(s) is True\nfor s in [' NO ', '0', 'False']:\n    assert parse_bool(s) is False\nfor s in ['', 'maybe']:\n    try:\n        parse_bool(s)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError('expected ValueError')\n"
+  }
+]

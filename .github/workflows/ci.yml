@@ -1,0 +1,13 @@
+name: test
+on: [push, pull_request]
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv venv --python 3.11
+      - run: uv pip install -e '.[dev]' 'ziglang>=0.14,<0.15'
+      - run: uv run --no-project ruff check src tests
+      - run: uv run --no-project pytest -q
+      - run: uv build
