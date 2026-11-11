@@ -1,0 +1,262 @@
+   Compiling bowling v1.2.0 (/work)
+warning: unused import: `std::fmt`
+ --> src/lib.rs:1:5
+  |
+1 | use std::fmt;
+  |     ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/lib.rs:120:13
+    |
+120 |         let mut i = frame * 2;
+    |             ----^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/lib.rs:130:17
+    |
+130 |             let mut j = i + 1;
+    |                 ----^
+    |                 |
+    |                 help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/lib.rs:142:17
+    |
+142 |             let mut j = i + 1;
+    |                 ----^
+    |                 |
+    |                 help: remove this `mut`
+
+warning: `bowling` (lib) generated 4 warnings (run `cargo fix --lib -p bowling` to apply 4 suggestions)
+warning: `bowling` (lib test) generated 4 warnings (4 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.37s
+     Running unittests src/lib.rs (target/debug/deps/bowling-960f94c24c5c380f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/bowling.rs (target/debug/deps/bowling-38a80dc153f63142)
+
+running 31 tests
+test a_game_score_is_none_if_fewer_than_ten_frames_have_been_rolled ... FAILED
+test a_game_score_is_some_if_ten_frames_have_been_rolled ... FAILED
+test a_roll_is_err_if_the_game_is_done ... FAILED
+test a_strike_earns_ten_points_in_a_frame_with_a_single_roll ... FAILED
+test a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll ... FAILED
+test a_strike_in_the_last_frame_earns_a_two_roll_bonus_that_is_counted_once ... FAILED
+test a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus ... FAILED
+test all_strikes_is_a_perfect_score_of_300 ... FAILED
+test cannot_roll_after_bonus_roll_for_spare ... FAILED
+test consecutive_spares_each_get_a_one_roll_bonus ... FAILED
+test consecutive_strikes_each_get_the_two_roll_bonus ... FAILED
+test cannot_roll_after_bonus_roll_for_strike ... FAILED
+test if_the_last_frame_is_a_spare_you_cannot_create_a_score_before_extra_roll_is_taken ... FAILED
+test first_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins ... FAILED
+test if_the_last_frame_is_a_spare_you_get_one_extra_roll_that_is_scored_once ... FAILED
+test if_the_last_frame_is_a_strike_you_cannot_score_before_the_extra_rolls_are_taken ... FAILED
+test points_scored_in_the_roll_after_a_spare_are_counted_twice_as_a_bonus ... FAILED
+test last_two_strikes_followed_by_only_last_bonus_with_non_strike_points ... FAILED
+test roll_returns_a_result ... ok
+test second_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins_even_if_first_is_strike ... FAILED
+test points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus ... FAILED
+test spare_in_the_first_frame_followed_by_zeros ... FAILED
+test strikes_with_the_two_roll_bonus_do_not_get_a_bonus_roll ... FAILED
+test the_two_balls_after_a_final_strike_can_be_a_strike_and_non_strike ... FAILED
+test ten_frames_without_a_strike_or_spare ... FAILED
+test the_two_balls_after_a_final_strike_cannot_score_an_invalid_number_of_pins ... FAILED
+test twenty_zero_pin_rolls_scores_zero ... FAILED
+test the_two_balls_after_a_final_strike_cannot_be_a_non_strike_followed_by_a_strike ... FAILED
+test you_cannot_roll_more_than_ten_pins_in_a_single_roll ... ok
+test you_cannot_roll_more_than_ten_pins_in_a_single_frame ... FAILED
+test you_cannot_score_a_game_with_no_rolls ... ok
+
+failures:
+
+---- a_game_score_is_none_if_fewer_than_ten_frames_have_been_rolled stdout ----
+
+thread 'a_game_score_is_none_if_fewer_than_ten_frames_have_been_rolled' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- a_game_score_is_some_if_ten_frames_have_been_rolled stdout ----
+
+thread 'a_game_score_is_some_if_ten_frames_have_been_rolled' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- a_roll_is_err_if_the_game_is_done stdout ----
+
+thread 'a_roll_is_err_if_the_game_is_done' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- a_strike_earns_ten_points_in_a_frame_with_a_single_roll stdout ----
+
+thread 'a_strike_earns_ten_points_in_a_frame_with_a_single_roll' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll stdout ----
+
+thread 'a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- a_strike_in_the_last_frame_earns_a_two_roll_bonus_that_is_counted_once stdout ----
+
+thread 'a_strike_in_the_last_frame_earns_a_two_roll_bonus_that_is_counted_once' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus stdout ----
+
+thread 'a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- all_strikes_is_a_perfect_score_of_300 stdout ----
+
+thread 'all_strikes_is_a_perfect_score_of_300' panicked at tests/bowling.rs:275:5:
+assertion `left == right` failed
+  left: None
+ right: Some(300)
+
+---- cannot_roll_after_bonus_roll_for_spare stdout ----
+
+thread 'cannot_roll_after_bonus_roll_for_spare' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- consecutive_spares_each_get_a_one_roll_bonus stdout ----
+
+thread 'consecutive_spares_each_get_a_one_roll_bonus' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- consecutive_strikes_each_get_the_two_roll_bonus stdout ----
+
+thread 'consecutive_strikes_each_get_the_two_roll_bonus' panicked at tests/bowling.rs:199:5:
+assertion `left == right` failed
+  left: None
+ right: Some(81)
+
+---- cannot_roll_after_bonus_roll_for_strike stdout ----
+
+thread 'cannot_roll_after_bonus_roll_for_strike' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- if_the_last_frame_is_a_spare_you_cannot_create_a_score_before_extra_roll_is_taken stdout ----
+
+thread 'if_the_last_frame_is_a_spare_you_cannot_create_a_score_before_extra_roll_is_taken' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- first_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins stdout ----
+
+thread 'first_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- if_the_last_frame_is_a_spare_you_get_one_extra_roll_that_is_scored_once stdout ----
+
+thread 'if_the_last_frame_is_a_spare_you_get_one_extra_roll_that_is_scored_once' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- if_the_last_frame_is_a_strike_you_cannot_score_before_the_extra_rolls_are_taken stdout ----
+
+thread 'if_the_last_frame_is_a_strike_you_cannot_score_before_the_extra_rolls_are_taken' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- points_scored_in_the_roll_after_a_spare_are_counted_twice_as_a_bonus stdout ----
+
+thread 'points_scored_in_the_roll_after_a_spare_are_counted_twice_as_a_bonus' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- last_two_strikes_followed_by_only_last_bonus_with_non_strike_points stdout ----
+
+thread 'last_two_strikes_followed_by_only_last_bonus_with_non_strike_points' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- second_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins_even_if_first_is_strike stdout ----
+
+thread 'second_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins_even_if_first_is_strike' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus stdout ----
+
+thread 'points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- spare_in_the_first_frame_followed_by_zeros stdout ----
+
+thread 'spare_in_the_first_frame_followed_by_zeros' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- strikes_with_the_two_roll_bonus_do_not_get_a_bonus_roll stdout ----
+
+thread 'strikes_with_the_two_roll_bonus_do_not_get_a_bonus_roll' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- the_two_balls_after_a_final_strike_can_be_a_strike_and_non_strike stdout ----
+
+thread 'the_two_balls_after_a_final_strike_can_be_a_strike_and_non_strike' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- ten_frames_without_a_strike_or_spare stdout ----
+
+thread 'ten_frames_without_a_strike_or_spare' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- the_two_balls_after_a_final_strike_cannot_score_an_invalid_number_of_pins stdout ----
+
+thread 'the_two_balls_after_a_final_strike_cannot_score_an_invalid_number_of_pins' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- twenty_zero_pin_rolls_scores_zero stdout ----
+
+thread 'twenty_zero_pin_rolls_scores_zero' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- the_two_balls_after_a_final_strike_cannot_be_a_non_strike_followed_by_a_strike stdout ----
+
+thread 'the_two_balls_after_a_final_strike_cannot_be_a_non_strike_followed_by_a_strike' panicked at src/lib.rs:65:26:
+index out of bounds: the len is 18 but the index is 18
+
+---- you_cannot_roll_more_than_ten_pins_in_a_single_frame stdout ----
+
+thread 'you_cannot_roll_more_than_ten_pins_in_a_single_frame' panicked at tests/bowling.rs:284:5:
+assertion `left == right` failed
+  left: Ok(())
+ right: Err(NotEnoughPinsLeft)
+
+
+failures:
+    a_game_score_is_none_if_fewer_than_ten_frames_have_been_rolled
+    a_game_score_is_some_if_ten_frames_have_been_rolled
+    a_roll_is_err_if_the_game_is_done
+    a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll
+    a_strike_earns_ten_points_in_a_frame_with_a_single_roll
+    a_strike_in_the_last_frame_earns_a_two_roll_bonus_that_is_counted_once
+    a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus
+    all_strikes_is_a_perfect_score_of_300
+    cannot_roll_after_bonus_roll_for_spare
+    cannot_roll_after_bonus_roll_for_strike
+    consecutive_spares_each_get_a_one_roll_bonus
+    consecutive_strikes_each_get_the_two_roll_bonus
+    first_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins
+    if_the_last_frame_is_a_spare_you_cannot_create_a_score_before_extra_roll_is_taken
+    if_the_last_frame_is_a_spare_you_get_one_extra_roll_that_is_scored_once
+    if_the_last_frame_is_a_strike_you_cannot_score_before_the_extra_rolls_are_taken
+    last_two_strikes_followed_by_only_last_bonus_with_non_strike_points
+    points_scored_in_the_roll_after_a_spare_are_counted_twice_as_a_bonus
+    points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus
+    second_bonus_ball_after_a_final_strike_cannot_score_an_invalid_number_of_pins_even_if_first_is_strike
+    spare_in_the_first_frame_followed_by_zeros
+    strikes_with_the_two_roll_bonus_do_not_get_a_bonus_roll
+    ten_frames_without_a_strike_or_spare
+    the_two_balls_after_a_final_strike_can_be_a_strike_and_non_strike
+    the_two_balls_after_a_final_strike_cannot_be_a_non_strike_followed_by_a_strike
+    the_two_balls_after_a_final_strike_cannot_score_an_invalid_number_of_pins
+    twenty_zero_pin_rolls_scores_zero
+    you_cannot_roll_more_than_ten_pins_in_a_single_frame
+
+test result: FAILED. 3 passed; 28 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test bowling`

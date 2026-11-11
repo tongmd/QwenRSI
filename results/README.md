@@ -1,4 +1,9 @@
-# Measured release run
+# Measured release runs
+
+The [paper benchmark run](tom-20261111-paper/) evaluates the runtime JIT on the
+Darwin Gödel Machine paper's initial SWE-bench Verified and Aider Polyglot tasks.
+
+## v0.1 controller search
 
 The first completed run is [tom-20261110-003](tom-20261110-003/). Earlier launch
 attempts were superseded during setup and a Python 3.10 compatibility fix before

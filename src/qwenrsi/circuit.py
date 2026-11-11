@@ -9,7 +9,30 @@ import json
 import time
 from pathlib import Path
 
+from qwenrsi import __version__
 from qwenrsi.compiler import ReferenceController, sha256
+
+
+def capture_cuda_step(torch, device, step):
+    stream = torch.cuda.Stream(device=device)
+    stream.wait_stream(torch.cuda.current_stream(device))
+    with torch.cuda.stream(stream):
+        for _ in range(3):
+            step()
+    torch.cuda.current_stream(device).wait_stream(stream)
+    graph = torch.cuda.CUDAGraph()
+    with torch.cuda.graph(graph):
+        step()
+    return graph
+
+
+def trace_action(trace):
+    from chipformer.rv import spec as S
+
+    output = [S.family(t)[1] for t in trace if S.family(t)[0] == "BYTE"]
+    if len(output) != 1:
+        raise RuntimeError("Controller did not emit exactly one action")
+    return output[0]
 
 
 class CircuitController(ReferenceController):
@@ -29,17 +52,8 @@ class CircuitController(ReferenceController):
             self._load(checkpoint)
 
     def _capture(self):
-        torch = self.torch
         # Warm and capture before initializing a program; both mutate recurrent state.
-        s = torch.cuda.Stream(device=self.device)
-        s.wait_stream(torch.cuda.current_stream(self.device))
-        with torch.cuda.stream(s):
-            for _ in range(3):
-                self.ex.step(self.x)
-        torch.cuda.current_stream(self.device).wait_stream(s)
-        self.graph = torch.cuda.CUDAGraph()
-        with torch.cuda.graph(self.graph):
-            self.ex.step(self.x)
+        self.graph = capture_cuda_step(self.torch, self.device, lambda: self.ex.step(self.x))
 
     def trace(self, state, mode=0, max_tokens=3000):
         from chipformer.rv import spec as S
@@ -65,13 +79,7 @@ class CircuitController(ReferenceController):
         raise TimeoutError("Circuit exceeded trace-token budget")
 
     def decide(self, state, mode=0):
-        from chipformer.rv import spec as S
-
-        trace = self.trace(state, mode)
-        output = [S.family(t)[1] for t in trace if S.family(t)[0] == "BYTE"]
-        if len(output) != 1:
-            raise RuntimeError("Controller did not emit exactly one action")
-        return output[0]
+        return trace_action(self.trace(state, mode))
 
     def _weight_tensors(self):
         torch = self.torch
@@ -120,7 +128,7 @@ class CircuitController(ReferenceController):
         )
 
 
-def load_bundle(directory, device="cuda:0"):
+def load_bundle(directory, device="cuda:0", *, jit=False):
     directory = Path(directory)
     config = json.loads((directory / "qwenrsi_config.json").read_text())
     if config.get("format") != "qwenrsi-sparse-circuit-v1":
@@ -128,6 +136,10 @@ def load_bundle(directory, device="cuda:0"):
     for name, digest in config["files"].items():
         if Path(name).name != name or sha256(directory / name) != digest:
             raise ValueError(f"Bundle integrity check failed: {name}")
+    if jit:
+        from qwenrsi.jit import JITController
+
+        return JITController(directory, device, directory / config["controller_weights"])
     return CircuitController(directory, device, directory / config["controller_weights"])
 
 
@@ -190,7 +202,7 @@ def export(directory, out, device="cuda:0", base_model="Qwen/Qwen3.5-4B"):
         shutil.copy2(Path(directory) / name, out / name)
     config = {
         "format": "qwenrsi-sparse-circuit-v1",
-        "qwenrsi_version": "0.1.0",
+        "qwenrsi_version": __version__,
         "base_model": base_model,
         "base_weights_modified": False,
         "controller_weights": "controller.safetensors",

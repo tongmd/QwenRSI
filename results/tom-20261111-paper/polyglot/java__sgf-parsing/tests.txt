@@ -1,0 +1,6 @@
+src/main/java/SgfParsing.java:102: error: cannot find symbol
+                Map<String, List<String>> properties = stack.peek().getProperties();
+                                                                   ^
+  symbol:   method getProperties()
+  location: class SgfNode
+1 error

@@ -41,6 +41,21 @@ Qwen and the circuit are separate modules on the same GPU. Host code handles
 state transfer and version switching at decision boundaries. No mid-instruction
 state migration is claimed.
 
+### Hot-path compilation
+
+The JIT observes complete invocations of the generic circuit and verifies each
+observed trace against the RV32 reference. At the hotness threshold it lowers
+the instructions along that path to Boolean operations in a sparse SwiGLU
+circuit. Controller inputs remain 32-bit symbolic values. The circuit computes
+both the action byte and the guards for the recorded branches, indirect jumps
+and syscalls. Loads and stores use fixed addresses, with writes scoped to the
+invocation. The runtime uses the action only when the guards pass.
+
+By default the threshold is two observations and the cache holds up to eight
+compiled paths per controller. Unsupported operations, data-dependent memory
+addresses, and paths that exceed the compilation budget use the generic circuit.
+The cache is rebuilt from runtime observations each time the controller is loaded.
+
 ## Export format
 
 `controller.safetensors` stores per-sublayer sparse row pointers, indices,

@@ -3,7 +3,7 @@
 **Editable agent controllers, executed as Qwenputer circuits.**
 
 [Controller model](https://huggingface.co/StoneZhang/QwenRSI-Controller-v0.1) ·
-[Measured run](results/README.md) ·
+[Benchmark results](results/README.md) ·
 [Releases](https://github.com/tongmd/QwenRSI/releases)
 
 QwenRSI connects a frozen Qwen model to a versioned C harness. Qwen proposes edits
@@ -16,13 +16,10 @@ This is an experimental implementation of a bounded self-modification loop.
 It does not train Qwen, demonstrate unbounded recursive improvement, or claim
 that an internal harness is faster than native code.
 
-The first measured run on an RTX 4090 accepted one of three actual Qwen proposals.
-On the synthetic protocol's final 256 cases, the seed solved 0, the selected
-controller solved 216, and the human-written verified controller solved 256.
-Both seed and selected controllers solved all four real Python pilot tasks.
-The selected circuit matched its reference on 1,220 freely generated trace
-tokens. These are integration results, not evidence of broad coding gains or
-improvement beyond the human-written controller. [Raw evidence](results/README.md).
+The benchmark runner uses the exact first-stage SWE-bench Verified and Aider
+Polyglot task lists from the [Darwin Gödel Machine paper](https://arxiv.org/html/2505.22954v3#S4.SS2).
+The task reports record the controller decisions for paired timing with and
+without the Qwenputer JIT. [Benchmark protocol and results](results/tom-20261111-paper/).
 
 ```mermaid
 flowchart LR
@@ -50,7 +47,7 @@ pip install -e '.[dev]' 'ziglang>=0.14,<0.15'
 qwenrsi build examples/baseline.c --out build/baseline
 qwenrsi check build/baseline
 qwenrsi build examples/verified.c --out build/verified
-qwenrsi eval build/verified --backend reference --out build/verified/evaluation.json
+qwenrsi check build/verified
 ```
 
 For GPU execution and local Qwen inference, install `pip install -e '.[gpu]'`.
@@ -87,7 +84,6 @@ a new capability.
 
 ```bash
 qwenrsi audit-circuit build/verified --out build/verified/gpu-audit.json
-qwenrsi eval build/verified --backend cuda --count 16 --out build/verified/cuda-eval.json
 qwenrsi export build/verified --out artifacts/controller
 ```
 
@@ -101,7 +97,7 @@ the tensors and tests them again.
 ```python
 from qwenrsi.circuit import load_bundle
 
-controller = load_bundle("artifacts/controller", device="cuda:0")
+controller = load_bundle("artifacts/controller", device="cuda:0", jit=True)
 action = controller.decide([1, 1, 0, 0, 1, 8, 4])
 print(action)  # 2: test (for examples/verified.c)
 ```
@@ -110,6 +106,20 @@ The model bundle is a **compiled controller**, not a trained Qwen language model
 or a stock Transformers checkpoint. Frozen Qwen is loaded separately. Program
 ROM/RAM/registers are initialized from firmware; the circuit tensors implement
 the CPU. A harness edit changes program state, not the language model's weights.
+
+## Qwenputer JIT
+
+Use `--backend cuda-jit` or `load_bundle(..., jit=True)` to enable runtime
+compilation. When the generic Qwenputer circuit follows the same RV32 path twice,
+QwenRSI lowers that path into a sparse SwiGLU circuit with the invocation's
+inputs still variable. The new circuit computes the return value and checks
+the recorded branch and address assumptions. A failed guard or an unsupported
+path uses the generic circuit. The cache lives in the controller instance.
+
+Run the paper tasks with `qwenrsi polyglot` and `qwenrsi swe-bench`.
+`qwenrsi profile-jit` replays the recorded task decisions, checks the action on
+each backend, and measures cache population and steady-state controller time.
+[Reproduction commands](docs/reproduction.md#paper-benchmarks).
 
 ## Real Python repair pilot
 
@@ -134,7 +144,7 @@ container or disposable account.
 |---|---|
 | Qwen proposal and repair generation | Frozen base model on GPU |
 | Task policy and editable version selector | Native/RV32 during search; Qwenputer circuit with CUDA backend |
-| RV32 CPU arithmetic and memory recurrence | Compiled Gated DeltaNet/SwiGLU circuit, upstream Triton executor |
+| RV32 CPU arithmetic and memory recurrence | Generic Gated DeltaNet/SwiGLU circuit, or a guarded hot-path SwiGLU circuit, on CUDA |
 | C compiler, benchmark, test subprocesses, admission gate | Host |
 | Version archive and model-bundle serialization | Host |
 
@@ -152,7 +162,7 @@ already runs a coding-agent harness on that CPU.
 [Darwin Gödel Machine](https://arxiv.org/abs/2505.22954) study harness search and
 self-modifying agents. QwenRSI is an engineering integration with an explicit
 editable ABI and evidence trail; this release does not establish a novel RSI
-algorithm. Automatic hotspot-to-circuit JIT is future work, not implemented here.
+algorithm.
 
 See [architecture](docs/architecture.md), [reproduction](docs/reproduction.md),
 [third-party attribution](THIRD_PARTY_NOTICES.md), and [MIT license](LICENSE).

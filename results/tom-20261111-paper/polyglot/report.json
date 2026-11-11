@@ -1,0 +1,736 @@
+{
+  "dataset": "https://github.com/Aider-AI/polyglot-benchmark",
+  "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+  "subset": "DGM Appendix E.3 initial 10",
+  "metric": "pass@1",
+  "solved": 0,
+  "count": 10,
+  "elapsed_seconds": 493.0375992929912,
+  "records": [
+    {
+      "instance_id": "go__dominoes",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "dominoes_test.go": "6b04dea25bcfcd44320677e5e63ac6bac558b690f1a6a41d3c5c4cbc3b2537ed"
+      },
+      "edited_files": [
+        "dominoes.go"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "/datadisk1/zt/qwenrsi-paper-bench/tools/golang.org/toolchain@v0.0.1-go1.21.5.linux-amd64/bin/go",
+        "test",
+        "./..."
+      ],
+      "elapsed_seconds": 4.671652102959342
+    },
+    {
+      "instance_id": "cpp__all-your-base",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "all_your_base_test.cpp": "58c7d05e6eaa314346388159cd980886f4b2108bb6f47523a9270bb4e86ce4a3"
+      },
+      "edited_files": [
+        "all_your_base.cpp",
+        "all_your_base.h"
+      ],
+      "passed": false,
+      "returncode": 2,
+      "test_command": [
+        "bash",
+        "-ec",
+        "cmake -S . -B build -DEXERCISM_RUN_ALL_TESTS=1\ncmake --build build -j 2"
+      ],
+      "elapsed_seconds": 9.828296966967173
+    },
+    {
+      "instance_id": "python__dominoes",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "dominoes_test.py": "9645efc873738b9247ced09ccdce782fe2124646d24588d52c23df59e23ab140"
+      },
+      "edited_files": [
+        "dominoes.py"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "/datadisk1/zt/qwenrsi-paper-bench/.venv-tests/bin/python",
+        "-m",
+        "pytest",
+        "-rA",
+        "--tb=long"
+      ],
+      "elapsed_seconds": 0.5649014899972826
+    },
+    {
+      "instance_id": "java__sgf-parsing",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "src/test/java/SgfParsingTest.java": "b3203f3a17ebc6efda6515b77e2175e4557338147bcaf5e184d8f1654e61990d"
+      },
+      "edited_files": [
+        "src/main/java/SgfParsing.java"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "bash",
+        "-ec",
+        "mkdir -p /tmp/classes\njavac -cp \"$1:$2\" -d /tmp/classes src/main/java/*.java src/test/java/*.java\njava -jar \"$1\" execute --class-path \"/tmp/classes:$2\" --scan-class-path --fail-if-no-tests",
+        "sgf-parsing",
+        "/datadisk1/zt/qwenrsi-paper-bench/tools/junit-platform-console-standalone-1.10.0.jar",
+        "/datadisk1/zt/qwenrsi-paper-bench/tools/assertj-core-3.25.1.jar"
+      ],
+      "elapsed_seconds": 0.8656051380094141
+    },
+    {
+      "instance_id": "javascript__robot-name",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "robot-name.spec.js": "c238df5515e027317125871235b7db2604cdf90446132b33ea29026054b2b06b"
+      },
+      "edited_files": [
+        "robot-name.js"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "/datadisk1/zt/.local/opt/node-v22.13.1-linux-x64/bin/node",
+        "node_modules/jest/bin/jest.js",
+        "./*",
+        "--runInBand"
+      ],
+      "elapsed_seconds": 0.9154509780346416
+    },
+    {
+      "instance_id": "rust__variable-length-quantity",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "tests/variable-length-quantity.rs": "f0a1e684145b9addcfcfb860e441d4a96ba7346cffd59ef85988744627528de8"
+      },
+      "edited_files": [
+        "src/lib.rs"
+      ],
+      "passed": false,
+      "returncode": 101,
+      "test_command": [
+        "/datadisk1/zt/qwenrsi-paper-bench/tools/rustup/toolchains/1.88.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "test",
+        "--offline",
+        "--",
+        "--include-ignored"
+      ],
+      "elapsed_seconds": 0.11420099600218236
+    },
+    {
+      "instance_id": "python__beer-song",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "beer_song_test.py": "91c87daae769e12821ba3526858ca3fd45c3501033669edb6101e486d74eff1f"
+      },
+      "edited_files": [
+        "beer_song.py"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "/datadisk1/zt/qwenrsi-paper-bench/.venv-tests/bin/python",
+        "-m",
+        "pytest",
+        "-rA",
+        "--tb=long"
+      ],
+      "elapsed_seconds": 4.119158923975192
+    },
+    {
+      "instance_id": "go__book-store",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            2,
+            1,
+            10,
+            2
+          ],
+          "action": 1
+        }
+      ],
+      "test_sha256": {
+        "book_store_test.go": "207455da5d52a619f945f56646adacb8306aaa5d1b9cf63b1ef074ba757c096a"
+      },
+      "edited_files": [],
+      "passed": false,
+      "returncode": null,
+      "reason": "no applicable model edit"
+    },
+    {
+      "instance_id": "javascript__bottle-song",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "bottle-song.spec.js": "4e37954c18d69163f3c196884eda9b9dd84d18b3f09ad41312da214c2d0d0097"
+      },
+      "edited_files": [
+        "bottle-song.js"
+      ],
+      "passed": false,
+      "returncode": 1,
+      "test_command": [
+        "/datadisk1/zt/.local/opt/node-v22.13.1-linux-x64/bin/node",
+        "node_modules/jest/bin/jest.js",
+        "./*",
+        "--runInBand"
+      ],
+      "elapsed_seconds": 0.9155765720061027
+    },
+    {
+      "instance_id": "rust__bowling",
+      "attempts": 1,
+      "controller_trace": [
+        {
+          "state": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          "action": 0
+        },
+        {
+          "state": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            1
+          ],
+          "action": 1
+        },
+        {
+          "state": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            10,
+            2
+          ],
+          "action": 2
+        },
+        {
+          "state": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            9,
+            3
+          ],
+          "action": 3
+        }
+      ],
+      "test_sha256": {
+        "tests/bowling.rs": "59a07bb552e96b0aed1124bcf96eb84596db0990520676bc52a583f2197e145d"
+      },
+      "edited_files": [
+        "src/lib.rs"
+      ],
+      "passed": false,
+      "returncode": 101,
+      "test_command": [
+        "/datadisk1/zt/qwenrsi-paper-bench/tools/rustup/toolchains/1.88.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "test",
+        "--offline",
+        "--",
+        "--include-ignored"
+      ],
+      "elapsed_seconds": 0.4147734580328688
+    }
+  ],
+  "jit": {
+    "generic_calls": 8,
+    "generic_tokens": 288,
+    "guard_checks": 81,
+    "hits": 31,
+    "compiled_paths": 4,
+    "compile_seconds": 0.6420413400046527,
+    "compilations": [
+      {
+        "status": "compiled",
+        "instructions": 31,
+        "layers": 3,
+        "dims": 205,
+        "heads": 0,
+        "ffn_units": 12,
+        "max_units": 10,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 206,
+        "heads": 0,
+        "ffn_units": 13,
+        "max_units": 11,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 207,
+        "heads": 0,
+        "ffn_units": 14,
+        "max_units": 12,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 37,
+        "layers": 3,
+        "dims": 210,
+        "heads": 0,
+        "ffn_units": 17,
+        "max_units": 12,
+        "max_heads": 0
+      }
+    ]
+  }
+}

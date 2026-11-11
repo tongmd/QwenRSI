@@ -1,0 +1,35 @@
+{
+  "machine": "tom",
+  "os": "Linux-5.15.0-202-generic-x86_64-with-glibc2.35",
+  "python": "3.10.21",
+  "packages": {
+    "torch": "2.5.1+cu121",
+    "transformers": "5.17.0.dev0",
+    "triton": "3.1.0",
+    "accelerate": "1.14.0",
+    "numpy": "2.2.6",
+    "safetensors": "0.8.0",
+    "qwenrsi": "0.2.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_mib": 24564,
+  "driver": "580.178.04",
+  "transformers_commit": "a8d5f2c845471633cf744c86be66bf888b8d6a37",
+  "bwrap": "bubblewrap 0.6.1",
+  "crane": "0.20.3",
+  "dataset_sha256": "a45b1fe4e2f0c8390b2b2938ac83e92ed5979000856808f3679c07812e9e6dcd",
+  "polyglot_toolchains": {
+    "go": "go version go1.21.5 linux/amd64",
+    "rust": "rustc 1.88.0 (6b00bc388 2025-06-23)",
+    "node": "v22.13.1",
+    "java": "openjdk version \"17.0.21.0.3\" 2026-10-24",
+    "cmake": "cmake version 3.22.1",
+    "cpp": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "python": "Python 3.11.16",
+    "pytest": "pytest 9.2.0",
+    "jest": "29.7.0",
+    "junit": "1.10.0",
+    "assertj": "3.25.1"
+  },
+  "swebench_grader": "3.0.7"
+}

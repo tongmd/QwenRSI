@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Zhang
     given-names: Tong
-version: 0.1.0
-date-released: 2026-11-10
+version: 0.2.0
+date-released: 2026-11-11
 url: https://github.com/tongmd/QwenRSI
 license: MIT

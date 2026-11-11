@@ -1,0 +1,155 @@
+[
+  {
+    "instance_id": "go__dominoes",
+    "test_sha256": {
+      "dominoes_test.go": "6b04dea25bcfcd44320677e5e63ac6bac558b690f1a6a41d3c5c4cbc3b2537ed"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/golang.org/toolchain@v0.0.1-go1.21.5.linux-amd64/bin/go",
+      "test",
+      "./..."
+    ],
+    "elapsed_seconds": 4.7729731719591655
+  },
+  {
+    "instance_id": "cpp__all-your-base",
+    "test_sha256": {
+      "all_your_base_test.cpp": "58c7d05e6eaa314346388159cd980886f4b2108bb6f47523a9270bb4e86ce4a3"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "bash",
+      "-ec",
+      "cmake -S . -B build -DEXERCISM_RUN_ALL_TESTS=1\ncmake --build build -j 2"
+    ],
+    "elapsed_seconds": 10.229616764001548
+  },
+  {
+    "instance_id": "python__dominoes",
+    "test_sha256": {
+      "dominoes_test.py": "9645efc873738b9247ced09ccdce782fe2124646d24588d52c23df59e23ab140"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/.venv-tests/bin/python",
+      "-m",
+      "pytest",
+      "-rA",
+      "--tb=long"
+    ],
+    "elapsed_seconds": 0.8160756329889409
+  },
+  {
+    "instance_id": "java__sgf-parsing",
+    "test_sha256": {
+      "src/test/java/SgfParsingTest.java": "b3203f3a17ebc6efda6515b77e2175e4557338147bcaf5e184d8f1654e61990d"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "bash",
+      "-ec",
+      "mkdir -p /tmp/classes\njavac -cp \"$1:$2\" -d /tmp/classes src/main/java/*.java src/test/java/*.java\njava -jar \"$1\" execute --class-path \"/tmp/classes:$2\" --scan-class-path --fail-if-no-tests",
+      "sgf-parsing",
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/junit-platform-console-standalone-1.10.0.jar",
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/assertj-core-3.25.1.jar"
+    ],
+    "elapsed_seconds": 1.5162637729663402
+  },
+  {
+    "instance_id": "javascript__robot-name",
+    "test_sha256": {
+      "robot-name.spec.js": "c238df5515e027317125871235b7db2604cdf90446132b33ea29026054b2b06b"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/.local/opt/node-v22.13.1-linux-x64/bin/node",
+      "node_modules/jest/bin/jest.js",
+      "./*",
+      "--runInBand"
+    ],
+    "elapsed_seconds": 1.5165795260109007
+  },
+  {
+    "instance_id": "rust__variable-length-quantity",
+    "test_sha256": {
+      "tests/variable-length-quantity.rs": "f0a1e684145b9addcfcfb860e441d4a96ba7346cffd59ef85988744627528de8"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/rustup/toolchains/1.88.0-x86_64-unknown-linux-gnu/bin/cargo",
+      "test",
+      "--offline",
+      "--",
+      "--include-ignored"
+    ],
+    "elapsed_seconds": 0.46489727299194783
+  },
+  {
+    "instance_id": "python__beer-song",
+    "test_sha256": {
+      "beer_song_test.py": "91c87daae769e12821ba3526858ca3fd45c3501033669edb6101e486d74eff1f"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/.venv-tests/bin/python",
+      "-m",
+      "pytest",
+      "-rA",
+      "--tb=long"
+    ],
+    "elapsed_seconds": 0.8153510769479908
+  },
+  {
+    "instance_id": "go__book-store",
+    "test_sha256": {
+      "book_store_test.go": "207455da5d52a619f945f56646adacb8306aaa5d1b9cf63b1ef074ba757c096a"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/golang.org/toolchain@v0.0.1-go1.21.5.linux-amd64/bin/go",
+      "test",
+      "./..."
+    ],
+    "elapsed_seconds": 4.922725846001413
+  },
+  {
+    "instance_id": "javascript__bottle-song",
+    "test_sha256": {
+      "bottle-song.spec.js": "4e37954c18d69163f3c196884eda9b9dd84d18b3f09ad41312da214c2d0d0097"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/.local/opt/node-v22.13.1-linux-x64/bin/node",
+      "node_modules/jest/bin/jest.js",
+      "./*",
+      "--runInBand"
+    ],
+    "elapsed_seconds": 0.915262256981805
+  },
+  {
+    "instance_id": "rust__bowling",
+    "test_sha256": {
+      "tests/bowling.rs": "59a07bb552e96b0aed1124bcf96eb84596db0990520676bc52a583f2197e145d"
+    },
+    "passed": true,
+    "returncode": 0,
+    "test_command": [
+      "/datadisk1/zt/qwenrsi-paper-bench/tools/rustup/toolchains/1.88.0-x86_64-unknown-linux-gnu/bin/cargo",
+      "test",
+      "--offline",
+      "--",
+      "--include-ignored"
+    ],
+    "elapsed_seconds": 0.46498354099458084
+  }
+]

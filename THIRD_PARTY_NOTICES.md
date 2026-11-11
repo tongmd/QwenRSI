@@ -14,3 +14,10 @@ Qwenputer release.
 
 Qwen language-model weights are separate artifacts under their respective
 upstream licenses. They are not included in the MIT-licensed source distribution.
+
+The benchmark task lists follow [Darwin Gödel Machine](https://github.com/jennyzzt/dgm).
+[Aider Polyglot](https://github.com/Aider-AI/polyglot-benchmark) curates exercises
+from Exercism, which retains copyright in the original exercise and test content.
+[SWE-bench](https://github.com/SWE-bench/SWE-bench) supplies the grader and
+evaluation images. Benchmark data, images, and dependencies are fetched
+separately under their upstream licenses.

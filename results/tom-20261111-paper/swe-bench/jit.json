@@ -1,0 +1,130 @@
+{
+  "benchmark_report": "runs/tom-20261111-swe-evidence/report.json",
+  "dataset_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "decisions_per_replay": 32,
+  "repetitions": 7,
+  "matched_decisions": 480,
+  "baseline_seconds": [
+    2.825244876963552,
+    2.77391719102161,
+    2.7652923380373977,
+    2.767442120006308,
+    2.7673176240059547,
+    2.7719250350492075,
+    2.7649028259911574
+  ],
+  "jit_seconds": [
+    0.0166519180056639,
+    0.01631552801700309,
+    0.016797622956801206,
+    0.01609822700265795,
+    0.016794905997812748,
+    0.016224252991378307,
+    0.016753122035879642
+  ],
+  "median_speedup": 166.19359518014704,
+  "generic_tokens_per_baseline_replay": 1120,
+  "generic_tokens_across_jit_replays": 0,
+  "cold_seconds": 1.1731860809959471,
+  "cold_jit": {
+    "generic_calls": 8,
+    "generic_tokens": 288,
+    "guard_checks": 42,
+    "hits": 24,
+    "compiled_paths": 4,
+    "compile_seconds": 0.4496662739547901,
+    "compilations": [
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 206,
+        "heads": 0,
+        "ffn_units": 13,
+        "max_units": 11,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 31,
+        "layers": 3,
+        "dims": 205,
+        "heads": 0,
+        "ffn_units": 12,
+        "max_units": 10,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 207,
+        "heads": 0,
+        "ffn_units": 14,
+        "max_units": 12,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 37,
+        "layers": 3,
+        "dims": 210,
+        "heads": 0,
+        "ffn_units": 17,
+        "max_units": 12,
+        "max_heads": 0
+      }
+    ]
+  },
+  "final_jit": {
+    "generic_calls": 8,
+    "generic_tokens": 288,
+    "guard_checks": 406,
+    "hits": 248,
+    "compiled_paths": 4,
+    "compile_seconds": 0.4496662739547901,
+    "compilations": [
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 206,
+        "heads": 0,
+        "ffn_units": 13,
+        "max_units": 11,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 31,
+        "layers": 3,
+        "dims": 205,
+        "heads": 0,
+        "ffn_units": 12,
+        "max_units": 10,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 32,
+        "layers": 3,
+        "dims": 207,
+        "heads": 0,
+        "ffn_units": 14,
+        "max_units": 12,
+        "max_heads": 0
+      },
+      {
+        "status": "compiled",
+        "instructions": 37,
+        "layers": 3,
+        "dims": 210,
+        "heads": 0,
+        "ffn_units": 17,
+        "max_units": 12,
+        "max_heads": 0
+      }
+    ]
+  }
+}

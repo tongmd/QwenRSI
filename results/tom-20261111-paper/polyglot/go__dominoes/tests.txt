@@ -1,0 +1,4 @@
+# dominoes [dominoes.test]
+./dominoes.go:60:25: undefined: firstDomino
+FAIL	dominoes [build failed]
+FAIL

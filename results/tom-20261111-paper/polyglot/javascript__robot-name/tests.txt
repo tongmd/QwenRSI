@@ -1,0 +1,116 @@
+FAIL ./robot-name.spec.js
+  Robot
+    ✕ has a name (4 ms)
+    ✓ name is the same each time (3 ms)
+    ✕ different robots have different names (2 ms)
+    ✕ is able to reset the name (2 ms)
+    ✕ should set a unique name after reset (2 ms)
+    ✓ internal name cannot be modified (1 ms)
+    ✕ new names should not be sequential
+    ✕ names from reset should not be sequential (1 ms)
+    ○ skipped all the names can be generated
+
+  ● Robot › has a name
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: null
+
+      35 |
+      36 |   test('has a name', () => {
+    > 37 |     expect(robot.name).toMatch(/^[A-Z]{2}\d{3}$/);
+         |                        ^
+      38 |   });
+      39 |
+      40 |   test('name is the same each time', () => {
+
+      at Object.toMatch (robot-name.spec.js:37:24)
+
+  ● Robot › different robots have different names
+
+    expect(received).not.toEqual(expected) // deep equality
+
+    Expected: not null
+
+      44 |   test('different robots have different names', () => {
+      45 |     const differentRobot = new Robot();
+    > 46 |     expect(differentRobot.name).not.toEqual(robot.name);
+         |                                     ^
+      47 |   });
+      48 |
+      49 |   test('is able to reset the name', () => {
+
+      at Object.toEqual (robot-name.spec.js:46:37)
+
+  ● Robot › is able to reset the name
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: null
+
+      53 |     const newName = robot.name;
+      54 |
+    > 55 |     expect(newName).toMatch(/^[A-Z]{2}\d{3}$/);
+         |                     ^
+      56 |     expect(originalName).not.toEqual(newName);
+      57 |   });
+      58 |
+
+      at Object.toMatch (robot-name.spec.js:55:21)
+
+  ● Robot › should set a unique name after reset
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 10001
+    Received: 1
+
+      67 |     }
+      68 |
+    > 69 |     expect(usedNames.size).toEqual(NUMBER_OF_ROBOTS + 1);
+         |                            ^
+      70 |   });
+      71 |
+      72 |   test('internal name cannot be modified', () => {
+
+      at Object.toEqual (robot-name.spec.js:69:28)
+
+  ● Robot › new names should not be sequential
+
+    TypeError: Cannot read properties of null (reading 'substring')
+
+      2 |
+      3 | const areSequential = (name1, name2) => {
+    > 4 |   const alpha1 = name1.substring(0, 2);
+        |                        ^
+      5 |   const alpha2 = name2.substring(0, 2);
+      6 |   const num1 = Number(name1.substring(2, 5));
+      7 |   const num2 = Number(name2.substring(2, 5));
+
+      at substring (robot-name.spec.js:4:24)
+      at Object.areSequential (robot-name.spec.js:83:12)
+
+  ● Robot › names from reset should not be sequential
+
+    TypeError: Cannot read properties of null (reading 'substring')
+
+      2 |
+      3 | const areSequential = (name1, name2) => {
+    > 4 |   const alpha1 = name1.substring(0, 2);
+        |                        ^
+      5 |   const alpha2 = name2.substring(0, 2);
+      6 |   const num1 = Number(name1.substring(2, 5));
+      7 |   const num2 = Number(name2.substring(2, 5));
+
+      at substring (robot-name.spec.js:4:24)
+      at Object.areSequential (robot-name.spec.js:94:12)
+
+Test Suites: 1 failed, 1 total
+Tests:       6 failed, 1 skipped, 2 passed, 9 total
+Snapshots:   0 total
+Time:        0.589 s
+Ran all test suites matching /.\/*/i.

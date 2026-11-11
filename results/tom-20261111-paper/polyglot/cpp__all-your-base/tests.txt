@@ -1,0 +1,119 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /work/build
+[ 25%] Building CXX object CMakeFiles/all-your-base.dir/all_your_base_test.cpp.o
+[ 50%] Building CXX object CMakeFiles/all-your-base.dir/all_your_base.cpp.o
+[ 75%] Building CXX object CMakeFiles/all-your-base.dir/test/tests-main.cpp.o
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____0()’:
+/work/all_your_base_test.cpp:15:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   15 |     vector<unsigned int> out_digits = all_your_base::convert(2, in_digits, 10);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____2()’:
+/work/all_your_base_test.cpp:24:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   24 |     vector<unsigned int> out_digits = all_your_base::convert(2, in_digits, 10);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____4()’:
+/work/all_your_base_test.cpp:32:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   32 |     vector<unsigned int> out_digits = all_your_base::convert(10, in_digits, 2);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____6()’:
+/work/all_your_base_test.cpp:40:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   40 |     vector<unsigned int> out_digits = all_your_base::convert(2, in_digits, 10);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____8()’:
+/work/all_your_base_test.cpp:48:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   48 |     vector<unsigned int> out_digits = all_your_base::convert(10, in_digits, 2);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____10()’:
+/work/all_your_base_test.cpp:56:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   56 |     vector<unsigned int> out_digits = all_your_base::convert(3, in_digits, 16);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____12()’:
+/work/all_your_base_test.cpp:64:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   64 |     vector<unsigned int> out_digits = all_your_base::convert(16, in_digits, 3);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____14()’:
+/work/all_your_base_test.cpp:72:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   72 |     vector<unsigned int> out_digits = all_your_base::convert(97, in_digits, 73);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____16()’:
+/work/all_your_base_test.cpp:80:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   80 |     vector<unsigned int> out_digits = all_your_base::convert(2, in_digits, 10);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____18()’:
+/work/all_your_base_test.cpp:88:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   88 |     vector<unsigned int> out_digits = all_your_base::convert(10, in_digits, 2);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____20()’:
+/work/all_your_base_test.cpp:96:66: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+   96 |     vector<unsigned int> out_digits = all_your_base::convert(10, in_digits, 2);
+      |                                                                  ^~~~~~~~~
+      |                                                                  |
+      |                                                                  vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____22()’:
+/work/all_your_base_test.cpp:104:65: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  104 |     vector<unsigned int> out_digits = all_your_base::convert(7, in_digits, 10);
+      |                                                                 ^~~~~~~~~
+      |                                                                 |
+      |                                                                 vector<unsigned int>
+In file included from /work/all_your_base_test.cpp:5:
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____24()’:
+/work/all_your_base_test.cpp:112:49: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  112 |     REQUIRE_THROWS_AS(all_your_base::convert(1, in_digits, 10), std::invalid_argument);
+      |                                                 ^~~~~~~~~
+      |                                                 |
+      |                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____26()’:
+/work/all_your_base_test.cpp:118:49: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  118 |     REQUIRE_THROWS_AS(all_your_base::convert(0, in_digits, 10), std::invalid_argument);
+      |                                                 ^~~~~~~~~
+      |                                                 |
+      |                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____28()’:
+/work/all_your_base_test.cpp:124:49: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  124 |     REQUIRE_THROWS_AS(all_your_base::convert(2, in_digits, 10), std::invalid_argument);
+      |                                                 ^~~~~~~~~
+      |                                                 |
+      |                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____30()’:
+/work/all_your_base_test.cpp:130:49: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  130 |     REQUIRE_THROWS_AS(all_your_base::convert(2, in_digits, 1), std::invalid_argument);
+      |                                                 ^~~~~~~~~
+      |                                                 |
+      |                                                 vector<unsigned int>
+/work/all_your_base_test.cpp: In function ‘void ____C_A_T_C_H____T_E_S_T____32()’:
+/work/all_your_base_test.cpp:136:50: error: could not convert ‘in_digits’ from ‘vector<unsigned int>’ to ‘vector<int>’
+  136 |     REQUIRE_THROWS_AS(all_your_base::convert(10, in_digits, 0), std::invalid_argument);
+      |                                                  ^~~~~~~~~
+      |                                                  |
+      |                                                  vector<unsigned int>
+gmake[2]: *** [CMakeFiles/all-your-base.dir/build.make:76: CMakeFiles/all-your-base.dir/all_your_base_test.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:85: CMakeFiles/all-your-base.dir/all] Error 2
+gmake: *** [Makefile:91: all] Error 2

@@ -1,0 +1,34 @@
+{
+  "paper": "https://arxiv.org/html/2505.22954v3",
+  "dgm_code_revision": "a565fd2d1dca504ef5104a7cc0f3bdc4ab9b4fd2",
+  "dataset": "princeton-nlp/SWE-bench_Verified",
+  "dataset_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+  "dataset_sha256": "a45b1fe4e2f0c8390b2b2938ac83e92ed5979000856808f3679c07812e9e6dcd",
+  "instances": [
+    "django__django-10973",
+    "django__django-11066",
+    "django__django-12754",
+    "django__django-15930",
+    "django__django-13279",
+    "django__django-16661",
+    "django__django-13346",
+    "django__django-10880",
+    "django__django-10999",
+    "django__django-11087"
+  ],
+  "model": {
+    "model": "models/Qwen3.5-4B",
+    "config_commit": null,
+    "class": "Qwen3_5ForConditionalGeneration",
+    "device": "cuda:0",
+    "weights_frozen": true,
+    "local_file_hashes": {
+      "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "model.safetensors.index.json": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "download_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "max_agent_calls": 6,
+  "scorer": "swebench.harness.grading.get_eval_report",
+  "backend": "JITController"
+}

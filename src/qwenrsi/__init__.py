@@ -1,6 +1,6 @@
 """QwenRSI: bounded, measured evolution of compiled agent controllers."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 
 def enable_chipformer():

@@ -1,0 +1,32 @@
+{
+  "paper": "https://arxiv.org/html/2505.22954v3",
+  "dataset": "https://github.com/Aider-AI/polyglot-benchmark",
+  "dataset_revision": "7e0611e77b54e2dea774cdc0aa00cf9f7ed6144f",
+  "dgm_code_revision": "a565fd2d1dca504ef5104a7cc0f3bdc4ab9b4fd2",
+  "instances": [
+    "go__dominoes",
+    "cpp__all-your-base",
+    "python__dominoes",
+    "java__sgf-parsing",
+    "javascript__robot-name",
+    "rust__variable-length-quantity",
+    "python__beer-song",
+    "go__book-store",
+    "javascript__bottle-song",
+    "rust__bowling"
+  ],
+  "model": {
+    "model": "models/Qwen3.5-4B",
+    "config_commit": null,
+    "class": "Qwen3_5ForConditionalGeneration",
+    "device": "cuda:0",
+    "weights_frozen": true,
+    "local_file_hashes": {
+      "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "model.safetensors.index.json": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "download_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+  },
+  "metric": "pass@1",
+  "backend": "JITController"
+}

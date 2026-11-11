@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qwenrsi"
-version = "0.1.0"
-description = "Editable agent controllers, compiled into Qwenputer circuits, with measured self-improvement"
+version = "0.2.0"
+description = "Editable agent controllers with a Qwenputer RV32 trace JIT"
 readme = "README.md"
 authors = [{name = "Tong Zhang"}]
 requires-python = ">=3.10"
